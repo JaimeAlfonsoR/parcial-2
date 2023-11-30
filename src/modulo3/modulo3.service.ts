@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Modulo3Entity } from './modulo3.entity/modulo3.entity';
 import { FotoEntity } from 'src/foto/foto.entity/foto.entity';
+import { BusinessError, BusinessLogicException } from 'src/shared/errors/business-errors';
 
 @Injectable()
 export class Modulo3Service {
