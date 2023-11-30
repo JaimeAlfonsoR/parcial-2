@@ -1,6 +1,6 @@
 
+import { FotoEntity } from "src/foto/foto.entity/foto.entity";
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { FotoEntity } from 'src/foto/image.entity/image.entity';
 
 @Entity()
 export class Modulo3Entity {

@@ -1,6 +1,7 @@
 
 /* eslint-disable prettier/prettier */
-import { FotoEntity } from 'src/foto/image.entity/image.entity';
+
+import { FotoEntity } from 'src/foto/foto.entity/foto.entity';
 import { Modulo2Entity } from 'src/modulo2/modulo2.entity/modulo2.entity';
 import { Modulo3Entity } from 'src/modulo3/modulo3.entity/modulo3.entity';
 import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
