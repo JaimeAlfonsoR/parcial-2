@@ -1,5 +1,5 @@
-import { Modulo1Entity } from 'src/modulo1/modulo1.entity/modulo1.entity';
-import { Modulo3Entity } from 'src/modulo3/modulo3.entity/modulo3.entity';
+import { Modulo1Entity } from '../modulo1/modulo1.entity';
+import { Modulo3Entity } from '../modulo3/modulo3.entity';
 
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 

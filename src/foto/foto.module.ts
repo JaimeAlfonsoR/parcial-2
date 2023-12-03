@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { FotoService } from './foto.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { FotoEntity } from './foto.entity/foto.entity';
+import { FotoEntity } from './foto.entity';
 
 @Module({
   providers: [FotoService],

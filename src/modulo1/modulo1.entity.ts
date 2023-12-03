@@ -1,9 +1,8 @@
 
 /* eslint-disable prettier/prettier */
 
-import { FotoEntity } from 'src/foto/foto.entity/foto.entity';
-import { Modulo2Entity } from 'src/modulo2/modulo2.entity/modulo2.entity';
-import { Modulo3Entity } from 'src/modulo3/modulo3.entity/modulo3.entity';
+import { FotoEntity } from '../foto/foto.entity';
+import { Modulo2Entity } from '../modulo2/modulo2.entity';
 import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
@@ -12,23 +11,14 @@ export class Modulo1Entity {
  id: string;
 
  @Column()
- name: string;
+ nombre: string;
  
  @Column()
- description: string;
- 
- @Column()
- address: string;
- 
- @Column()
- city: string;
-
- @Column()
- image: string;
+ telefono: string;
 
  @ManyToOne(() => Modulo2Entity, modulo2 => modulo2.modulo1s)
    modulo2: Modulo2Entity[];
 
  @OneToMany(() => FotoEntity, foto => foto.modulo1)
-   fotos: Modulo3Entity[];
+   fotos: FotoEntity[];
 }

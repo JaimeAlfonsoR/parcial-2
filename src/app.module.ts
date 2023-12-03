@@ -8,10 +8,10 @@ import { Modulo3Module } from './modulo3/modulo3.module';
 import { FotoModule } from './foto/foto.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { Modulo3Entity } from './modulo3/modulo3.entity/modulo3.entity';
-import { Modulo2Entity } from './modulo2/modulo2.entity/modulo2.entity';
-import { FotoEntity} from './foto/foto.entity/foto.entity';
-import { Modulo1Entity } from './modulo1/modulo1.entity/modulo1.entity';
+import { Modulo3Entity } from './modulo3/modulo3.entity';
+import { Modulo2Entity } from './modulo2/modulo2.entity';
+import { FotoEntity} from './foto/foto.entity';
+import { Modulo1Entity } from './modulo1/modulo1.entity';
 
 
 @Module({

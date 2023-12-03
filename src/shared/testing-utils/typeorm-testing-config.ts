@@ -1,21 +1,19 @@
-/* eslint-disable prettier/prettier */
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ArtistEntity } from '../../artist/artist.entity';
-import { ArtworkEntity } from '../../artwork/artwork.entity';
-import { ExhibitionEntity } from '../../exhibition/exhibition.entity';
-import { ImageEntity } from '../../image/image.entity';
-import { MovementEntity } from '../../movement/movement.entity';
-import { MuseumEntity } from '../../museum/museum.entity';
-import { SponsorEntity } from '../../sponsor/sponsor.entity';
+
+import { Modulo1Entity } from '../../modulo1/modulo1.entity';
+import { Modulo2Entity } from '../../modulo2/modulo2.entity';
+import { Modulo3Entity } from '../../modulo3/modulo3.entity';
+import { FotoEntity } from '../../foto/foto.entity';
+
 
 export const TypeOrmTestingConfig = () => [
-  TypeOrmModule.forRoot({
-    type: 'sqlite',
-    database: ':memory:',
-    dropSchema: true,
-    entities: [ArtistEntity, ArtworkEntity, ExhibitionEntity, ImageEntity, MovementEntity, MuseumEntity, SponsorEntity],
-    synchronize: true,
-    keepConnectionAlive: true 
-  }),
-  TypeOrmModule.forFeature([ArtistEntity, ArtworkEntity, ExhibitionEntity, ImageEntity, MovementEntity, MuseumEntity, SponsorEntity]),
+ TypeOrmModule.forRoot({
+   type: 'sqlite',
+   database: ':memory:',
+   dropSchema: true,
+   entities: [FotoEntity, Modulo1Entity, Modulo2Entity, Modulo3Entity],
+   synchronize: true,
+   keepConnectionAlive: true
+ }),
+ TypeOrmModule.forFeature([FotoEntity, Modulo1Entity, Modulo2Entity, Modulo3Entity]),
 ];
