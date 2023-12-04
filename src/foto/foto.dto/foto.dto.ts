@@ -2,7 +2,6 @@ import { IsDate, IsNotEmpty, IsNumber } from "class-validator";
 
 export class FotoDto {
    
-   @IsDate()
    @IsNotEmpty()
    readonly fecha: Date;
    

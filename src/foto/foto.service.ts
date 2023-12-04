@@ -8,10 +8,11 @@ import { Modulo3Entity } from '../modulo3/modulo3.entity';
 @Injectable()
 export class FotoService {
     constructor(
-        @InjectRepository(FotoEntity)
-        private readonly fotoRepository: Repository<FotoEntity>,
-        @InjectRepository(Modulo3Entity)
-        private readonly modulo3Repository: Repository<Modulo3Entity>
+      @InjectRepository(Modulo3Entity)
+      private readonly modulo3Repository: Repository<Modulo3Entity>,
+
+      @InjectRepository(FotoEntity)
+      private readonly fotoRepository: Repository<FotoEntity>
     ){}
     async findAll(): Promise<FotoEntity[]> {
         return await this.fotoRepository.find({ relations: ["modulo1", "modulo3"] });

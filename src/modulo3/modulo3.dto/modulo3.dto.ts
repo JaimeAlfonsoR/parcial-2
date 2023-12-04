@@ -5,11 +5,9 @@ export class Modulo3Dto {
     @IsNotEmpty()
     readonly titulo: string;
 
-    @IsDate()
     @IsNotEmpty()
     readonly fechaInicio: Date;
 
-    @IsDate()
     @IsNotEmpty()
     readonly fechaFin: Date;
 }

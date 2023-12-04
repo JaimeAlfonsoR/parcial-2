@@ -1,0 +1,608 @@
+{
+	"info": {
+		"_postman_id": "d5a1c802-893b-4a86-ade9-9d772a53d6ec",
+		"name": "Albums-Fotos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31364796"
+	},
+	"item": [
+		{
+			"name": "Add a album",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"album_id\", data.id);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fechaInicio\":\"2022-12-01T12:30:00.000Z\",\n    \"fechaFin\":\"2024-12-01T12:30:00.000Z\",\n    \"titulo\": \"parcial\"\n }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/albums",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"albums"
+					]
+				},
+				"description": "This request creates a new museum. The API returns the created resource with the assigned ID."
+			},
+			"response": [
+				{
+					"name": "Add a museum",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Smithsonian national museum of natural history\",\n    \"description\": \"The world's most popular natural history museum is dedicated to understanding the natural world and our place in it. Delve into the fascinating story of our planet, from its fiery beginnings through billions of years of transformation, and explore life on Earth through exhibitions and activities, collection objects and research that happens in the lab and in the field. The museum is larger than 18 football fields and is home to the largest natural history collection in the world.\",\n    \"address\": \"10th St. & Constitution Ave. NW, Washington, DC\",\n    \"city\": \"Washington DC\",\n    \"image\": \"https://www.si.edu/sites/default/files/newsdesk/fact_sheets/nhb2015-02891.jpg\"\n }\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/museums",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"museums"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\n   \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n   \"name\": \"Smithsonian national museum of natural history\",\n   \"description\": \"The world's most popular natural history museum is dedicated to understanding the natural world and our place in it. Delve into the fascinating story of our planet, from its fiery beginnings through billions of years of transformation, and explore life on Earth through exhibitions and activities, collection objects and research that happens in the lab and in the field. The museum is larger than 18 football fields and is home to the largest natural history collection in the world.\",\n   \"address\": \"10th St. & Constitution Ave. NW, Washington, DC\",\n   \"city\": \"Washington DC\",\n   \"image\": \"https://www.si.edu/sites/default/files/newsdesk/fact_sheets/nhb2015-02891.jpg\"\n}\n"
+				}
+			]
+		},
+		{
+			"name": "Add a foto 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"foto_id_1\", data.id);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fecha\":\"2023-12-01T12:30:00.000Z\",\n    \"ISO\":1000,\n    \"velObturacion\":200,\n    \"apertura\":10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/fotos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"fotos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add an artwork",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"La Femme qui pleure\",\n    \"description\": \"The Weeping Woman, I is an elaboration of one of the central figures in Picasso’s famous mural-size painting Guernica, executed some months earlier.\",\n    \"year\": 1837,\n    \"type\": \"Painting\",\n    \"mainImage\": \"https://assets.catawiki.nl/assets/2019/3/7/2/f/5/2f5c8a17-0b06-4f26-b4a7-4fa51a430ce1.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/artworks",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"artworks"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "375"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"177-KviNwRfAdyNZmiHt915SK9j7Ask\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Aug 2022 18:55:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"La Femme qui pleure\",\n    \"description\": \"The Weeping Woman, I is an elaboration of one of the central figures in Picasso’s famous mural-size painting Guernica, executed some months earlier.\",\n    \"mainImage\": \"https://assets.catawiki.nl/assets/2019/3/7/2/f/5/2f5c8a17-0b06-4f26-b4a7-4fa51a430ce1.jpg\",\n    \"type\": \"Painting\",\n    \"year\": 1837,\n    \"id\": \"37d742be-e0e0-4024-b840-64cb41623aed\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add a foto 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"foto_id_2\", data.id);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fecha\":\"2023-12-30T12:30:00.000Z\",\n    \"ISO\":1200,\n    \"velObturacion\":100,\n    \"apertura\":5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/fotos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"fotos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add an artwork",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"La Femme qui pleure\",\n    \"description\": \"The Weeping Woman, I is an elaboration of one of the central figures in Picasso’s famous mural-size painting Guernica, executed some months earlier.\",\n    \"year\": 1837,\n    \"type\": \"Painting\",\n    \"mainImage\": \"https://assets.catawiki.nl/assets/2019/3/7/2/f/5/2f5c8a17-0b06-4f26-b4a7-4fa51a430ce1.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/artworks",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"artworks"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "375"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"177-KviNwRfAdyNZmiHt915SK9j7Ask\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Aug 2022 18:55:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"La Femme qui pleure\",\n    \"description\": \"The Weeping Woman, I is an elaboration of one of the central figures in Picasso’s famous mural-size painting Guernica, executed some months earlier.\",\n    \"mainImage\": \"https://assets.catawiki.nl/assets/2019/3/7/2/f/5/2f5c8a17-0b06-4f26-b4a7-4fa51a430ce1.jpg\",\n    \"type\": \"Painting\",\n    \"year\": 1837,\n    \"id\": \"37d742be-e0e0-4024-b840-64cb41623aed\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add a foto to an album",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/albums/{{album_id}}/fotos/{{foto_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"albums",
+						"{{album_id}}",
+						"fotos",
+						"{{foto_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add an artwork",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"La Femme qui pleure\",\n    \"description\": \"The Weeping Woman, I is an elaboration of one of the central figures in Picasso’s famous mural-size painting Guernica, executed some months earlier.\",\n    \"year\": 1837,\n    \"type\": \"Painting\",\n    \"mainImage\": \"https://assets.catawiki.nl/assets/2019/3/7/2/f/5/2f5c8a17-0b06-4f26-b4a7-4fa51a430ce1.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/artworks",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"artworks"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "375"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"177-KviNwRfAdyNZmiHt915SK9j7Ask\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Aug 2022 18:55:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"La Femme qui pleure\",\n    \"description\": \"The Weeping Woman, I is an elaboration of one of the central figures in Picasso’s famous mural-size painting Guernica, executed some months earlier.\",\n    \"mainImage\": \"https://assets.catawiki.nl/assets/2019/3/7/2/f/5/2f5c8a17-0b06-4f26-b4a7-4fa51a430ce1.jpg\",\n    \"type\": \"Painting\",\n    \"year\": 1837,\n    \"id\": \"37d742be-e0e0-4024-b840-64cb41623aed\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add an invalid foto to an album",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"    var data = pm.response.json();",
+							"    pm.expect(data.message).to.eql(\"The foto with the given id was not found\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/albums/{{album_id}}/fotos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"albums",
+						"{{album_id}}",
+						"fotos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add an invalid artwork to a museum",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/museums/{{museum_id}}/artworks/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"museums",
+								"{{museum_id}}",
+								"artworks",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "74"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4a-HdSXQ9DOFik77lA6BTILifOYwSg\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Aug 2022 20:10:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"The artwork with the given id was not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add a foto to an invalid album",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"    var data = pm.response.json();",
+							"    pm.expect(data.message).to.eql(\"The Album with the given id was not found\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/albums/00000000-0000-0000-0000-000000000000/fotos/{{foto_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"albums",
+						"00000000-0000-0000-0000-000000000000",
+						"fotos",
+						"{{foto_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add an artwork to an invalid museum",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/museums/00000000-0000-0000-0000-000000000000/artworks/{{artwork_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"museums",
+								"00000000-0000-0000-0000-000000000000",
+								"artworks",
+								"{{artwork_id_1}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "73"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"49-v/cpCsS/IuHJb9v22y7e8zPAYzs\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Aug 2022 20:12:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"The museum with the given id was not found\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api/v1",
+			"type": "string"
+		}
+	]
+}
