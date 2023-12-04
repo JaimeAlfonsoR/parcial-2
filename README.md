@@ -1,7 +1,16 @@
 Jaime Esteban Alfonso Ruiz
 202116525
 
-Para las pruebas de postman, decidi implementar solo para los servicios que se mencionaron en el documento del parcial, dado que era los unicos que tocaba hacer y que estaban correctamente implementados. Para cada uno de estos servicios, se hico la prueba para el caso correcto y el error, ademas de validar varias de las condiciones que se impusieron en la logica como lo es que el slogan tiene que tener un largo de mas de 20 caracteres para poder crear la red social. Se realizaron las pruebas de todas las entidades y de la asociacion, esta ultima teniendo solo en cuenta el post debido a que era el unico metodo necesario
+Para las pruebas de postman, decidi implementar solo para los servicios que se mencionaron en el documento del parcial, dado que era los unicos que tocaba hacer y que estaban correctamente implementados. Para cada uno de estos servicios, se hico la prueba para el caso correcto y el error, ademas de validar varias de las condiciones que se impusieron en la logica como lo es que el slogan tiene que tener un largo de mas de 20 caracteres para poder crear la red social. Se realizaron las pruebas de todas las entidades y de la asociacion, esta ultima teniendo solo en cuenta el post debido a que era el unico metodo necesario. 
+
+Para los casos de error se tenian 3 posibilidades para los codigos: 
+HttpStatus.NOT_FOUND o 404
+HttpStatus.PRECONDITION_FAILED o 412
+HttpStatus.BAD_REQUEST o 400
+Ademas del codigo 200 y 2001, usado para las transacciones exitosas, por ejemplo: ![image](https://github.com/JaimeAlfonsoR/parcial-2/assets/89108988/de9f689c-4cbc-4098-bf92-d7496c4c9f53),
+
+
+por ultimo, se usaron variables de entorno para realizar las peticiones de get, delete, y las asociaciones (que en este caso era solo una), que me ayudaron a utilizar las entidades recien creadas y manipularlas en las peticiones siguientes.
 
 ## Description
 
