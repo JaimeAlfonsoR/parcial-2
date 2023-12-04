@@ -12,6 +12,11 @@ Ademas del codigo 200 y 2001, usado para las transacciones exitosas, por ejemplo
 
 por ultimo, se usaron variables de entorno para realizar las peticiones de get, delete, y las asociaciones (que en este caso era solo una), que me ayudaron a utilizar las entidades recien creadas y manipularlas en las peticiones siguientes.
 
+![image](https://github.com/JaimeAlfonsoR/parcial-2/assets/89108988/30ef8fc9-ee18-47c9-9276-3dd35c1288a5)
+
+Se puede ver, ademas, como el ID de cada una de las entidades creadas se asigna automaticamente.
+
+
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
